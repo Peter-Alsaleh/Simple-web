@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تصميم عصري</title>
+  <title>واجهةاحترافية</title>
   <style>
     * {
       box-sizing: border-box;
@@ -13,123 +13,232 @@
     }
 
     body {
+      background-color: #0b0f19;
+      color: #f3f4f6;
       min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* شريط الملاحة Upper Nav */
+    header {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      background-color: #0f172a;
-      color: #f8fafc;
-      overflow: hidden;
+      padding: 1.5rem 5%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    /* القسم الرئيسي Hero Section */
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
       position: relative;
     }
 
-    /* خلفية متوهجة */
-    .background-glow {
+    .hero::before {
+      content: '';
       position: absolute;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, rgba(168, 85, 247, 0) 70%);
-      top: 50%;
+      top: 20%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 0;
-    }
-
-    /* بطاقة المحتوى الزجاجية */
-    .card {
-      position: relative;
-      z-index: 1;
-      background: rgba(30, 41, 59, 0.75);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.125);
-      padding: 3rem 2.5rem;
-      border-radius: 24px;
-      max-width: 440px;
-      width: 90%;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      text-align: center;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0,0,0,0) 70%);
+      z-index: -1;
     }
 
     .badge {
       display: inline-block;
-      background: rgba(99, 102, 241, 0.15);
-      color: #818cf8;
-      border: 1px solid rgba(99, 102, 241, 0.3);
+      background: rgba(59, 130, 246, 0.1);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
       font-size: 0.85rem;
-      font-weight: 600;
-      padding: 0.35rem 1rem;
-      border-radius: 999px;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.85rem;
-      font-weight: 700;
-      color: #ffffff;
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
     }
 
-    p {
-      color: #94a3b8;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
+    .hero h1 span {
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    /* الأزرار */
-    .actions {
+    .hero p {
+      color: #9ca3af;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-buttons {
       display: flex;
       gap: 1rem;
       justify-content: center;
     }
 
     .btn {
-      padding: 0.85rem 1.75rem;
-      border-radius: 12px;
+      padding: 0.85rem 2rem;
+      border-radius: 10px;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 1rem;
       cursor: pointer;
-      transition: all 0.25s ease;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #3b82f6;
+      color: #fff;
       border: none;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
     }
 
-    .btn.primary {
-      background: linear-gradient(135deg, #6366f1, #a855f7);
-      color: #fff;
-      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-    }
-
-    .btn.primary:hover {
-      opacity: 0.95;
+    .btn-primary:hover {
+      background: #2563eb;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
     }
 
-    .btn.secondary {
+    .btn-secondary {
       background: rgba(255, 255, 255, 0.05);
-      color: #cbd5e1;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #e5e7eb;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .btn.secondary:hover {
+    .btn-secondary:hover {
       background: rgba(255, 255, 255, 0.1);
-      color: #fff;
+    }
+
+    /* كروت الميزات Cards Grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto 5rem auto;
+      padding: 0 1rem;
+    }
+
+    .card {
+      background: rgba(17, 24, 39, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 1.75rem;
+      border-radius: 16px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: #6b7280;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #4b5563;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
   </style>
 </head>
 <body>
-  <div class="background-glow"></div>
-  
-  <main class="card">
-    <span class="badge">جديد</span>
-    <h1>تصميم عصري وجذاب</h1>
-    <p>صفحة بسيطة بلمسات أنيقة مثل التأثيرات الضوئية والتنقل السلس للتحكم في عناصر التجربة بشكل مميز.</p>
-    
-    <div class="actions">
-      <button class="btn primary">ابدأ الآن</button>
-      <button class="btn secondary">معرفة المزيد</button>
-    </div>
+
+  <header>
+    <div class="logo">المنصة</div>
+    <ul class="nav-links">
+      <li><a href="#">الرئيسية</a></li>
+      <li><a href="#">المميزات</a></li>
+      <li><a href="#">الأسعار</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="badge">🚀 الجيل الجديد من التصميم</span>
+      <h1>ابنِ مشروعك القادم بـ <span>سرعة وأناقة</span></h1>
+      <p>واجهة متكاملة تجمع بين السرعة الفائقة والتصميم الحديث لتجربة مستخدم متميزة بدون أي تعقيد.</p>
+      
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary">ابدأ مجاناً</a>
+        <a href="#" class="btn btn-secondary">استكشف العرض</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>أداء سريع</h3>
+        <p>كود خفيف ومحسن بالكامل لضمان تحميل الصفحة في أقل من ثانية.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎨</div>
+        <h3>تصميم حديث</h3>
+        <p>ألوان هادئة ومريحة للعين مع تأثيرات تفاعلية انسيابية.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>متوافق 100%</h3>
+        <p>يعمل بشكل ممتاز على كافة الشاشات وأجهزة الهواتف الذكية.</p>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    &copy; 2026 جميع الحقوق محفوظة.
+  </footer>
+
 </body>
 </html>
