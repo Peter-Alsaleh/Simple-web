@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>واجهةاحترافية</title>
+  <title>تصميم عصري بخلفية 3D</title>
   <style>
     * {
       box-sizing: border-box;
@@ -13,232 +13,131 @@
     }
 
     body {
-      background-color: #0b0f19;
-      color: #f3f4f6;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    /* شريط الملاحة Upper Nav */
-    header {
-      display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      padding: 1.5rem 5%;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #9ca3af;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: #fff;
-    }
-
-    /* القسم الرئيسي Hero Section */
-    .hero {
-      text-align: center;
-      padding: 5rem 1rem;
-      max-width: 800px;
-      margin: 0 auto;
+      
+      /* الكود الأساسي الجديد لخلفية الـ 3D */
+      /* ستحتاج لحفظ صورة الخلفية المقترحة ووضع مسارها هنا */
+      background-image: url('bg-3d.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      
+      /* لون احتياطي في حال لم يتم تحميل الصورة */
+      background-color: #0d1221; 
+      
       position: relative;
+      overflow: hidden;
     }
 
-    .hero::before {
-      content: '';
+    /* يمكنك إضافة تأثير ضوئي إضافي فوق الخلفية لتعميق الإحساس بالـ 3D */
+    body::before {
+      content: "";
       position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0,0,0,0) 70%);
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      background: radial-gradient(circle at center, rgba(168, 85, 247, 0.1) 0%, rgba(13, 18, 33, 0) 70%);
       z-index: -1;
+    }
+
+    /* كود البطاقة كما هو */
+    .card {
+      position: relative;
+      background: rgba(30, 41, 59, 0.6); /* جعل الخلفية أكثر شفافية لرؤية الـ 3D */
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 3rem 2.5rem;
+      border-radius: 24px;
+      max-width: 440px;
+      width: 90%;
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+      text-align: center;
     }
 
     .badge {
       display: inline-block;
-      background: rgba(59, 130, 246, 0.1);
-      color: #60a5fa;
-      border: 1px solid rgba(59, 130, 246, 0.2);
-      padding: 0.4rem 1rem;
-      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.3);
       font-size: 0.85rem;
-      margin-bottom: 1.5rem;
+      font-weight: 600;
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1.2rem;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.85rem;
+      font-weight: 700;
+      color: #ffffff;
     }
 
-    .hero h1 span {
-      background: linear-gradient(135deg, #60a5fa, #a78bfa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
     }
 
-    .hero p {
-      color: #9ca3af;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-
-    .cta-buttons {
+    /* الأزرار */
+    .actions {
       display: flex;
       gap: 1rem;
       justify-content: center;
     }
 
     .btn {
-      padding: 0.85rem 2rem;
-      border-radius: 10px;
+      padding: 0.85rem 1.75rem;
+      border-radius: 12px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
       cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .btn-primary {
-      background: #3b82f6;
-      color: #fff;
+      transition: all 0.25s ease;
       border: none;
-      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+      text-decoration: none;
     }
 
-    .btn-primary:hover {
-      background: #2563eb;
+    .btn.primary {
+      background: linear-gradient(135deg, #a855f7, #6366f1);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+    }
+
+    .btn.primary:hover {
+      opacity: 0.95;
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
     }
 
-    .btn-secondary {
+    .btn.secondary {
       background: rgba(255, 255, 255, 0.05);
-      color: #e5e7eb;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    .btn-secondary:hover {
+    .btn.secondary:hover {
       background: rgba(255, 255, 255, 0.1);
-    }
-
-    /* كروت الميزات Cards Grid */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      max-width: 1000px;
-      margin: 0 auto 5rem auto;
-      padding: 0 1rem;
-    }
-
-    .card {
-      background: rgba(17, 24, 39, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 1.75rem;
-      border-radius: 16px;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(59, 130, 246, 0.3);
-    }
-
-    .card-icon {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      color: #6b7280;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #4b5563;
-      font-size: 0.85rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: #fff;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <div class="logo">المنصة</div>
-    <ul class="nav-links">
-      <li><a href="#">الرئيسية</a></li>
-      <li><a href="#">المميزات</a></li>
-      <li><a href="#">الأسعار</a></li>
-    </ul>
-  </header>
-
-  <main>
-    <section class="hero">
-      <span class="badge">🚀 الجيل الجديد من التصميم</span>
-      <h1>ابنِ مشروعك القادم بـ <span>سرعة وأناقة</span></h1>
-      <p>واجهة متكاملة تجمع بين السرعة الفائقة والتصميم الحديث لتجربة مستخدم متميزة بدون أي تعقيد.</p>
-      
-      <div class="cta-buttons">
-        <a href="#" class="btn btn-primary">ابدأ مجاناً</a>
-        <a href="#" class="btn btn-secondary">استكشف العرض</a>
-      </div>
-    </section>
-
-    <section class="features">
-      <div class="card">
-        <div class="card-icon">⚡</div>
-        <h3>أداء سريع</h3>
-        <p>كود خفيف ومحسن بالكامل لضمان تحميل الصفحة في أقل من ثانية.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎨</div>
-        <h3>تصميم حديث</h3>
-        <p>ألوان هادئة ومريحة للعين مع تأثيرات تفاعلية انسيابية.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📱</div>
-        <h3>متوافق 100%</h3>
-        <p>يعمل بشكل ممتاز على كافة الشاشات وأجهزة الهواتف الذكية.</p>
-      </div>
-    </section>
+  
+  <main class="card">
+    <span class="badge">جديد</span>
+    <h1>تصميم عصري وجذاب</h1>
+    <p>صفحة بسيطة بلمسات أنيقة مثل التأثيرات الضوئية والتنقل السلس للتحكم في عناصر التجربة بشكل مميز.</p>
+    
+    <div class="actions">
+      <a href="#" class="btn primary">ابدأ الآن</a>
+      <a href="#" class="btn secondary">معرفة المزيد</a>
+    </div>
   </main>
-
-  <footer>
-    &copy; 2026 جميع الحقوق محفوظة.
-  </footer>
-
 </body>
 </html>
