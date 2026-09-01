@@ -1,14 +1,13 @@
 {
-  "name": "nodejs-24-web-app",
+  "name": "simple-web",
   "version": "1.0.0",
-  "description": "Simple web application built with Node.js 24 LTS and Express",
+  "description": "Simple Node.js 24 LTS web application",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "start": "node server.js"
   },
   "engines": {
-    "node": ">=24.0.0"
+    "node": "24.x"
   },
   "dependencies": {
     "express": "^5.1.0"
